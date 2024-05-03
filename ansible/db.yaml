@@ -1,8 +1,8 @@
 - name: configure DB server
   hosts: db
   become: yes
-  # vars:
-  #   login_host: 172.31.17.171
+  vars:
+    login_host: "172.31.17.171"
   vars_prompt:
   - name: mysql_root_password
     prompt: please enter MySQL root password
@@ -31,7 +31,7 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{ mysql_root_password }}"
-      #login_host: "{{ login_host }}"
+      login_host: "{{ login_host }}"
       filter: version
     ignore_errors: yes
     register: mysql_connection_output
