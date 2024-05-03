@@ -2,7 +2,7 @@
   become: yes
   hosts: backend
   vars:
-    login_host: 54.221.30.7
+    login_host: 172.31.17.171 #DB
     login_password: ExpenseApp@1
   tasks:
   - name: disable default nodejs
